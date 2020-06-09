@@ -1,0 +1,95 @@
+﻿@model GenesysItemCollection.Models.Weapon
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@(Model.name)</h1>
+
+<div>
+    <h6>@(Model.Id)</h6>
+    <hr />
+
+    <table class="table">
+        <thead class="bg-dark text-light">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.skill)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.damage)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.critical)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.range)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.encumbrance)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.rarity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.hardpoints)
+                </th>
+                <th>
+                    Special
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.skill)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.damage)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.critical)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.range)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.encumbrance)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.price)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.rarity)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.hardpoints)
+                </td>
+                <td>
+                    @foreach (string specialItem in Model.special)
+                    {
+                        @specialItem<br />
+                    }
+
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="10">@Html.DisplayFor(model => model.notes)</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+<div>
+    <button class="btn btn-primary" asp-action="Index">Back to List</button>
+</div>

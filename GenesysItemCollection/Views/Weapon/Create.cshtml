@@ -1,0 +1,167 @@
+﻿@using GenesysItemCollection.Util
+@model GenesysItemCollection.Models.Weapon
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<h1>Create</h1>
+
+<h4>Weapon</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="name" class="control-label"></label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="skill" class="control-label"></label>
+                <select asp-for="skill" class="form-control">
+                    @foreach (string skill in WeaponInfo.getSkills())
+                    {
+                        <option>@skill</option>
+                    }
+                </select>
+                <span asp-validation-for="skill" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="damage" class="control-label"></label>
+                <input asp-for="damage" class="form-control" />
+                <span asp-validation-for="damage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="critical" class="control-label"></label>
+                <input asp-for="critical" class="form-control" />
+                <span asp-validation-for="critical" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="range" class="control-label"></label>
+                <select asp-for="range" class="form-control">
+                    @foreach (string range in WeaponInfo.getRangeBands())
+                    {
+                        <option>@range</option>
+                    }
+                </select>
+                <span asp-validation-for="range" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="encumbrance" class="control-label"></label>
+                <input asp-for="encumbrance" class="form-control" />
+                <span asp-validation-for="encumbrance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="price" class="control-label"></label>
+                <input asp-for="price" class="form-control" />
+                <span asp-validation-for="price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="rarity" class="control-label"></label>
+                <input asp-for="rarity" class="form-control" />
+                <span asp-validation-for="rarity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="hardpoints" class="control-label"></label>
+                <input asp-for="hardpoints" class="form-control" />
+                <span asp-validation-for="hardpoints" class="text-danger"></span>
+            </div>
+            @foreach (ItemQuality quality in WeaponInfo.getQualities())
+            {
+                <div class="form-group">
+
+                    <input class="form-check-input" type="checkbox" value="" id="@(quality.name)Check" />
+                    <label class="form-check-label" for="@(quality.name)Check">@(quality.name)</label>
+
+                    @if (quality.hasRating)
+                    {
+                        <input type="number" value="1" min="1" max="20" class="form-control form-control-sm" id="@(quality.name)Rating" disabled />
+                    }
+
+                    <input asp-for="special" type="hidden" value="NULL" id="@(quality.name)" />
+
+                </div>
+            }
+            <div class="form-group">
+                <label asp-for="notes" class="control-label" value=""></label>
+                <input asp-for="notes" class="form-control" />
+                <span asp-validation-for="notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+
+    <script>
+    @foreach (ItemQuality quality in WeaponInfo.getQualities())
+    {
+
+        <text>
+
+            $("#@(quality.name)Check").click(function () {
+
+                if ($(this).prop("checked") == true) {
+
+                    var output = "@(quality.name)";
+
+                    @if (quality.hasRating == true)
+                    {
+                        <text>
+                    output += " " + $("#@(quality.name)Rating").val();
+
+                    $("#@(quality.name)Rating").prop('disabled', false);
+
+                    </text>
+
+                    }
+
+                    $("#@(quality.name)").val(output);
+
+
+                } else {
+
+                    $("#@(quality.name)").val("NULL");
+                    $("#@(quality.name)Rating").prop('disabled', true);
+
+                }
+
+            });
+
+        </text>
+        
+        @if (quality.hasRating == true)
+        {
+
+            <text>
+
+        $("#@(quality.name)Rating").bind("change paste keyup", function () {
+
+            var output = "@(quality.name) " + $("#@(quality.name)Rating").val();
+
+            $("#@(quality.name)").val(output);
+
+        });
+
+             </text>
+
+        }
+
+
+    }
+
+    </script>
+
+}
