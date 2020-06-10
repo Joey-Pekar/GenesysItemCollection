@@ -136,3 +136,5 @@ E:\Capstone\GenesysItemCollection\GenesysItemCollection\obj\Release\netcoreapp3.
 E:\Capstone\GenesysItemCollection\GenesysItemCollection\obj\Release\netcoreapp3.0\GenesysItemCollection.csproj.CopyComplete
 E:\Capstone\GenesysItemCollection\GenesysItemCollection\obj\Release\netcoreapp3.0\GenesysItemCollection.dll
 E:\Capstone\GenesysItemCollection\GenesysItemCollection\obj\Release\netcoreapp3.0\GenesysItemCollection.pdb
+E:\Capstone\GenesysItemCollection\GenesysItemCollection\obj\Release\netcoreapp3.0\Razor\Views\Home\API.cshtml.g.cs
+E:\Capstone\GenesysItemCollection\GenesysItemCollection\bin\Release\netcoreapp3.0\libman.json

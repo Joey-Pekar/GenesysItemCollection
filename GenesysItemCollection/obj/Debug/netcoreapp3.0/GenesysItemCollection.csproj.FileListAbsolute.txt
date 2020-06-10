@@ -131,9 +131,10 @@ E:\Capstone\GenesysItemCollection\GenesysItemCollection\bin\Debug\netcoreapp3.0\
 E:\Capstone\GenesysItemCollection\GenesysItemCollection\bin\Debug\netcoreapp3.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 E:\Capstone\GenesysItemCollection\GenesysItemCollection\obj\Debug\netcoreapp3.0\Razor\Views\Weapon\Index.cshtml.g.cs
 E:\Capstone\GenesysItemCollection\GenesysItemCollection\obj\Debug\netcoreapp3.0\Razor\Views\Weapon\Create.cshtml.g.cs
-E:\Capstone\GenesysItemCollection\GenesysItemCollection\obj\Debug\netcoreapp3.0\GenesysItemCollection.MvcApplicationPartsAssemblyInfo.cache
 E:\Capstone\GenesysItemCollection\GenesysItemCollection\obj\Debug\netcoreapp3.0\Razor\Views\Weapon\Details.cshtml.g.cs
 E:\Capstone\GenesysItemCollection\GenesysItemCollection\obj\Debug\netcoreapp3.0\Razor\Views\Armor\Index.cshtml.g.cs
 E:\Capstone\GenesysItemCollection\GenesysItemCollection\obj\Debug\netcoreapp3.0\Razor\Views\Armor\Create.cshtml.g.cs
 E:\Capstone\GenesysItemCollection\GenesysItemCollection\obj\Debug\netcoreapp3.0\Razor\Views\Armor\Details.cshtml.g.cs
 E:\Capstone\GenesysItemCollection\GenesysItemCollection\obj\Debug\netcoreapp3.0\Razor\Views\Home\API.cshtml.g.cs
+E:\Capstone\GenesysItemCollection\GenesysItemCollection\bin\Debug\netcoreapp3.0\libman.json
+E:\Capstone\GenesysItemCollection\GenesysItemCollection\obj\Debug\netcoreapp3.0\GenesysItemCollection.MvcApplicationPartsAssemblyInfo.cache

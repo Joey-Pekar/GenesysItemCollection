@@ -6,14 +6,74 @@
 <h1>API</h1>
 <hr />
 
-In addition to the website showcasing this data, we have an api for this purpose. Both Weapons and Armor are supported for this. See below for a guide.
-
-
-<div class="card mb-3">
-    <div class="card-header"><h4 class="card-title">Weapons</h4></div>
-    <div class="card-body">
-        <p class="card-text">You can retrieve a list of all weapons using the following request:</p>
-        <div class="alert alert-light" role="alert">
-            <code><a href="https://genesysitemcollection.azurewebsites.net/api/weaponapi">https://genesysitemcollection.azurewebsites.net/api/weaponapi</a></code>
+<div class="row">
+    <div class="col-2 list-group" id="list-tab" role="tablist">
+        <a class="list-group-item list-group-item-action active" id="list-weapon-list" data-toggle="list" href="#list-weapon" role="tab" aria-controls="weapons">Weapons</a>
+        <a class="list-group-item list-group-item-action" id="list-armor-list" data-toggle="list" href="#list-armor" role="tab" aria-controls="armor">Armor</a>
+    </div>
+    <div class="col-10 tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="list-weapon" role="tabpanel" aria-labelledby="list-weapon-list">
+            <div class="card mb-3">
+                <div class="card-header"><h4 class="card-title">Weapons</h4></div>
+                <div class="card-body">
+                    <h5 class="card-header">GET Lists</h5>
+                    <p class="card-text">You can retrieve a list of all weapons using the following request:</p>
+                    <div class="alert alert-light" role="alert">
+                        <code><a href="https://genesysitemcollection.azurewebsites.net/api/weaponapi">https://genesysitemcollection.azurewebsites.net/api/weaponapi/</a></code>
+                    </div>
+                    <p class="card-text">You can also specify certain criteria as parameters in the request. The parameters are listed below.</p>
+                    <ul class="list-group">
+                        <li class="list-group-item"><code>range</code>: Search for weapons that have a specific range. Valid ranges ar Engaged, Short, Medium, Long and Extreme. This parameter is not case-sensitive.</li>
+                        <li class="list-group-item"><code>hasSpecial</code>: Check to see if the weapon has this quality. This parameter is case-sensitive.</li>
+                        <li class="list-group-item"><code>maxPrice</code>: Sets the max price that an item can cost. Accepts integer values.</li>
+                        <li class="list-group-item"><code>minDamage</code>: Sets the minimum damage that an item can have. Accepts integer values.</li>
+                    </ul>
+                    <br />
+                    <p class="card-text">To get weapons requiring a certain skill, you can use the following request. Valid skills are Brawl, Gunnery, Lightsaber, Melee, Melee-Light, Melee-Heavy, Ranged, Ranged-Light, and Ranged-Heavy.</p>
+                    <div class="alert alert-light" role="alert">
+                        <code><a href="https://genesysitemcollection.azurewebsites.net/api/weaponapi/skill/Engaged">https://genesysitemcollection.azurewebsites.net/api/weaponapi/skill/Engaged</a></code>
+                    </div>
+                    <p class="card-text">The four parameters listed above are able to be used here as well.</p>
+                    <hr />
+                    <h5 class="card-header">GET Individual Weapons</h5>
+                    <p class="card-text">Individual weapons can be retrieved by either appending the id on to the end, or by appending a name on at the end. Examples are listed below:</p>
+                    <div class="alert alert-light" role="alert">
+                        <code><a href="https://genesysitemcollection.azurewebsites.net/api/weaponapi/5edea1a7f9fa6328f0b41bf9">https://genesysitemcollection.azurewebsites.net/api/weaponapi/5edea1a7f9fa6328f0b41bf9</a></code>
+                    </div>
+                    <div class="alert alert-light" role="alert">
+                        <code><a href="https://genesysitemcollection.azurewebsites.net/api/weaponapi/Sword">https://genesysitemcollection.azurewebsites.net/api/weaponapi/Sword</a></code>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="list-armor" role="tabpanel" aria-labelledby="list-armor-list">
+            <div class="card mb-3">
+                <div class="card-header"><h4 class="card-title">Armor</h4></div>
+                <div class="card-body">
+                    <h5 class="card-header">GET Lists</h5>
+                    <p class="card-text">You can retrieve a list of all armor using the following request:</p>
+                    <div class="alert alert-light" role="alert">
+                        <code><a href="https://genesysitemcollection.azurewebsites.net/api/armorapi">https://genesysitemcollection.azurewebsites.net/api/armorapi/</a></code>
+                    </div>
+                    <p class="card-text">You can also specify certain criteria as parameters in the request. The parameters are listed below.</p>
+                    <ul class="list-group">
+                        <li class="list-group-item"><code>minMeleeDef</code>: Minimum melee defense an item can have. Accepts integer values.</li>
+                        <li class="list-group-item"><code>minRangeDef</code>: Minimum ranged defense an item can have. Accepts integer values.</li>
+                        <li class="list-group-item"><code>minSoak</code>: Minimum soak an item can have. Accepts integer values.</li>
+                        <li class="list-group-item"><code>maxPrice</code>: Sets the max price that an item can cost. Accepts integer values.</li>
+                    </ul>
+                    <br />
+                    <hr />
+                    <h5 class="card-header">GET Individual Armor</h5>
+                    <p class="card-text">Individual armor can be retrieved by either appending the id on to the end, or by appending a name on at the end. Examples are listed below:</p>
+                    <div class="alert alert-light" role="alert">
+                        <code><a href="https://genesysitemcollection.azurewebsites.net/api/armorapi/5ee00604ac5e974af8e134fe">https://genesysitemcollection.azurewebsites.net/api/armorapi/5ee00604ac5e974af8e134fe</a></code>
+                    </div>
+                    <div class="alert alert-light" role="alert">
+                        <code><a href="https://genesysitemcollection.azurewebsites.net/api/armorapi/Bulletproof%20Vest">https://genesysitemcollection.azurewebsites.net/api/armorapi/Bulletproof%20Vest</a></code>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</div>

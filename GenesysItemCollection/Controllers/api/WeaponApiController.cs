@@ -22,10 +22,39 @@ namespace GenesysItemCollection.Controllers.api
         }
 
         [HttpGet]
-        public ActionResult<List<Weapon>> Get()
+        public ActionResult<List<Weapon>> Get(string range = "", string hasSpecial = "", int minDamage = 0, int maxPrice = Int32.MaxValue)
         {
+            var weapons = _weaponService.Get().Where(w => w.damage >= minDamage && w.price <= maxPrice).ToList();
 
-            return _weaponService.Get();
+            if (!string.IsNullOrEmpty(range))
+            {
+                weapons = weapons.Where(w => string.Equals(w.range, range, StringComparison.OrdinalIgnoreCase)).ToList();
+            }
+
+            if (!string.IsNullOrEmpty(hasSpecial))
+            {
+
+                var newWeapons = new List<Weapon>();
+                
+                foreach (Weapon w in weapons)
+                {
+
+                    foreach(string special in w.special)
+                    {
+                        if (special.StartsWith(hasSpecial))
+                        {
+                            newWeapons.Add(w);
+                        }
+                        break;
+                    }
+
+                }
+
+                weapons = newWeapons;
+
+            }
+
+            return weapons;
 
         }
 
@@ -57,13 +86,70 @@ namespace GenesysItemCollection.Controllers.api
         }
 
         [HttpGet("skill/{skill}", Name = "GetWeaponsBySkill")]
-        public ActionResult<List<Weapon>> GetByType(string skill)
+        public ActionResult<List<Weapon>> GetByType(string skill, string range = "", string hasSpecial = "", int minDamage = 0, int maxPrice = Int32.MaxValue)
         {
             var weapons = _weaponService.Get().Where(w => string.Equals(w.skill, skill, StringComparison.OrdinalIgnoreCase)).ToList();
 
             if (weapons == null)
             {
                 return NotFound();
+            }
+
+            weapons = weapons.Where(w => w.damage >= minDamage && w.price <= maxPrice).ToList();
+
+            if (!string.IsNullOrEmpty(range))
+            {
+                weapons = weapons.Where(w => string.Equals(w.range, range, StringComparison.OrdinalIgnoreCase)).ToList();
+            }
+
+            if (!string.IsNullOrEmpty(hasSpecial))
+            {
+
+                var newWeapons = new List<Weapon>();
+
+                foreach (Weapon w in weapons)
+                {
+
+                    foreach (string special in w.special)
+                    {
+                        if (special.StartsWith(hasSpecial))
+                        {
+                            newWeapons.Add(w);
+                        }
+                        break;
+                    }
+
+                }
+
+                weapons = newWeapons;
+
+            }
+            if (!string.IsNullOrEmpty(range))
+            {
+                weapons = weapons.Where(w => string.Equals(w.range, range, StringComparison.OrdinalIgnoreCase)).ToList();
+            }
+
+            if (!string.IsNullOrEmpty(hasSpecial))
+            {
+
+                var newWeapons = new List<Weapon>();
+
+                foreach (Weapon w in weapons)
+                {
+
+                    foreach (string special in w.special)
+                    {
+                        if (special.StartsWith(hasSpecial))
+                        {
+                            newWeapons.Add(w);
+                        }
+                        break;
+                    }
+
+                }
+
+                weapons = newWeapons;
+
             }
 
             return weapons;
