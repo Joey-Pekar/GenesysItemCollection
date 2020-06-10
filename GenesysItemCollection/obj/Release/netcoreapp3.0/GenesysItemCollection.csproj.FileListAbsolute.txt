@@ -121,7 +121,6 @@ E:\Capstone\GenesysItemCollection\GenesysItemCollection\obj\Release\netcoreapp3.
 E:\Capstone\GenesysItemCollection\GenesysItemCollection\obj\Release\netcoreapp3.0\Razor\Views\Armor\Details.cshtml.g.cs
 E:\Capstone\GenesysItemCollection\GenesysItemCollection\obj\Release\netcoreapp3.0\Razor\Views\Armor\Index.cshtml.g.cs
 E:\Capstone\GenesysItemCollection\GenesysItemCollection\obj\Release\netcoreapp3.0\Razor\Views\Home\Index.cshtml.g.cs
-E:\Capstone\GenesysItemCollection\GenesysItemCollection\obj\Release\netcoreapp3.0\Razor\Views\Home\Privacy.cshtml.g.cs
 E:\Capstone\GenesysItemCollection\GenesysItemCollection\obj\Release\netcoreapp3.0\Razor\Views\Shared\Error.cshtml.g.cs
 E:\Capstone\GenesysItemCollection\GenesysItemCollection\obj\Release\netcoreapp3.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 E:\Capstone\GenesysItemCollection\GenesysItemCollection\obj\Release\netcoreapp3.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
