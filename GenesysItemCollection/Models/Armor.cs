@@ -30,5 +30,7 @@ namespace GenesysItemCollection.Models
         public int rarity { get; set; }
         [Display(Name = "Hard Points")]
         public int hardpoints { get; set; }
+        [Display(Name = "Notes")]
+        public string notes { get; set; }
     }
 }

@@ -1,0 +1,73 @@
+﻿@model GenesysItemCollection.Models.Armor
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Armor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="name" class="control-label"></label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="meleedefense" class="control-label"></label>
+                <input asp-for="meleedefense" class="form-control" />
+                <span asp-validation-for="meleedefense" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="rangeddefense" class="control-label"></label>
+                <input asp-for="rangeddefense" class="form-control" />
+                <span asp-validation-for="rangeddefense" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="soak" class="control-label"></label>
+                <input asp-for="soak" class="form-control" />
+                <span asp-validation-for="soak" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="encumbrance" class="control-label"></label>
+                <input asp-for="encumbrance" class="form-control" />
+                <span asp-validation-for="encumbrance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="price" class="control-label"></label>
+                <input asp-for="price" class="form-control" />
+                <span asp-validation-for="price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="rarity" class="control-label"></label>
+                <input asp-for="rarity" class="form-control" />
+                <span asp-validation-for="rarity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="hardpoints" class="control-label"></label>
+                <input asp-for="hardpoints" class="form-control" />
+                <span asp-validation-for="hardpoints" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="notes" class="control-label" value=""></label>
+                <input asp-for="notes" class="form-control" />
+                <span asp-validation-for="notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-primary" asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

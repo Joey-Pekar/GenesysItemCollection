@@ -1,0 +1,70 @@
+﻿@model GenesysItemCollection.Models.Armor
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@(Model.name)</h1>
+
+<div>
+    <h6>@(Model.Id)</h6>
+    <hr />
+    <table class="table">
+        <thead class="bg-dark text-light">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.meleedefense)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.rangeddefense)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.soak)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.encumbrance)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.rarity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.hardpoints)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.meleedefense)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.rangeddefense)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.soak)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.encumbrance)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.price)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.rarity)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.hardpoints)
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7">@Html.DisplayFor(model => model.notes)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <a class="btn btn-primary" asp-action="Index">Back to List</a>
+</div>

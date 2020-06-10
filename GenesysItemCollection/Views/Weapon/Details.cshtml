@@ -14,9 +14,6 @@
         <thead class="bg-dark text-light">
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.name)
-                </th>
-                <th>
                     @Html.DisplayNameFor(model => model.skill)
                 </th>
                 <th>
@@ -47,9 +44,6 @@
         </thead>
         <tbody>
             <tr>
-                <td>
-                    @Html.DisplayFor(model => model.name)
-                </td>
                 <td>
                     @Html.DisplayFor(model => model.skill)
                 </td>
@@ -84,12 +78,12 @@
             </tr>
 
             <tr>
-                <td colspan="10">@Html.DisplayFor(model => model.notes)</td>
+                <td colspan="9">@Html.DisplayFor(model => model.notes)</td>
             </tr>
         </tbody>
     </table>
 
 </div>
 <div>
-    <button class="btn btn-primary" asp-action="Index">Back to List</button>
+    <a class="btn btn-primary" asp-action="Index">Back to List</a>
 </div>

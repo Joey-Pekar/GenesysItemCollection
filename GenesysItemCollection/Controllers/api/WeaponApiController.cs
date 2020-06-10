@@ -69,7 +69,5 @@ namespace GenesysItemCollection.Controllers.api
             return weapons;
         }
 
-
-
     }
 }

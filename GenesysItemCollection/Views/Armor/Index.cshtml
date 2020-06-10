@@ -1,20 +1,17 @@
 ﻿@model IEnumerable<GenesysItemCollection.Models.Armor>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Armor Index";
 }
 
-<h1>Index</h1>
+<h1>Armor</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-primary" asp-action="Create">Create New</a>
 </p>
 <table class="table">
-    <thead>
+    <thead class="thead-dark">
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.name)
             </th>
@@ -46,9 +43,6 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.name)
             </td>
             <td>
@@ -73,9 +67,7 @@
                 @Html.DisplayFor(modelItem => item.hardpoints)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                <a asp-action="Details" asp-route-id="@(item.Id)" class="btn btn-primary">Details</a>
             </td>
         </tr>
 }

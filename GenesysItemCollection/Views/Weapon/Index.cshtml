@@ -1,16 +1,16 @@
 ﻿@model IEnumerable<GenesysItemCollection.Models.Weapon>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Weapons Index";
 }
 
-<h1>Index</h1>
+<h1>Weapons</h1>
 
 <p>
-    <button class="btn btn-primary" asp-action="Create">Create New</button>
+    <a class="btn btn-primary" asp-action="Create">Create New</a>
 </p>
 <table class="table">
-    <thead>
+    <thead class="thead-dark">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.name)

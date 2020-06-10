@@ -22,8 +22,16 @@ namespace GenesysItemCollection.Controllers
         }
 
         // GET: Weapon
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
+
+            var weapons = _weapons.Get();
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                weapons = weapons.Where(w => w.name.Contains(searchString) || w.skill.Equals(searchString)).ToList();
+            }
+
             return View(_weapons.Get());
         }
 
